@@ -1,8 +1,11 @@
 """
+exampleが少ないのと他のとの差別化がよくわからないなあ。
+
+https://pytorch-lightning.readthedocs.io/en/latest/api/pytorch_lightning.lite.LightningLite.html#pytorch_lightning.lite.LightningLite
+
 1. LightningLiteを継承したクラスを作り、runメソッドをオーバーライドする
 2. vanilla_pytorchで定義していたrunをrunメソッドとする
 3. deviceの設定はモジュールで実行されるので削除する
-4. 
 """
 
 import argparse
