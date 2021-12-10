@@ -1,0 +1,7 @@
+tqdm
+jupyterlab
+ipywidgets
+pytorch-lightning
+omegaconf
+loguru
+pandas
