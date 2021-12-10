@@ -16,6 +16,7 @@ from torchmetrics import Accuracy
 
 import pytorch_lightning as pl
 from pytorch_lightning.utilities.cli import LightningCLI
+from pytorch_lightning.callbacks import RichProgressBar
 
 
 class Net(nn.Module):
@@ -95,11 +96,17 @@ def cli_main():
         ImageClassifier,
         seed_everything_default=42,
         save_config_overwrite=True,
-        run=False
+        run=False,
     )
 
-    cli.trainer.fit(cli.model, datamodule=cli.datamodule)
-    cli.trainer.test(ckpt_path="best", datamodule=cli.datamodule)
+    cli.trainer.fit(
+        cli.model, datamodule=cli.datamodule
+    )
+
+    cli.trainer.test(
+        ckpt_path="best",
+        datamodule=cli.datamodule
+    )
 
 if __name__ == "__main__":
     cli_main()
